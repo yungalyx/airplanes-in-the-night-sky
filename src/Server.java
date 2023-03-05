@@ -46,7 +46,7 @@ public class Server {
                 aSocket.send(reply);
 
 
-                //Printing out what we receive here to see if it goes through
+                //Printing out what we receive here to see if it goes throug
                 for (byte b : buffer) {
                     System.out.format("0x%x ", b);
                     System.out.println(b);
