@@ -1,5 +1,4 @@
 import java.net.*;
-import java.io.*;
 
 public class App {
 
@@ -10,10 +9,10 @@ public class App {
           String message = "Hello, world!";
       
           // Marshal the object
-          byte[] bytes = MyMarshaller.marshal(message);
+          byte[] bytes = Marshaller.marshal(message);
       
           // Unmarshal the object
-          String result = (String) MyMarshaller.unmarshal(bytes);
+          String result = (String) Marshaller.unmarshal(bytes);
           System.out.println(result); // prints "Hello, world!"
         }
       }
