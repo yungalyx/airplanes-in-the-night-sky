@@ -2,6 +2,21 @@ import java.net.*;
 import java.io.*;
 
 public class App {
+
+
+    public class Main {
+        public static void main(String[] args) {
+          // Create an object to marshal
+          String message = "Hello, world!";
+      
+          // Marshal the object
+          byte[] bytes = MyMarshaller.marshal(message);
+      
+          // Unmarshal the object
+          String result = (String) MyMarshaller.unmarshal(bytes);
+          System.out.println(result); // prints "Hello, world!"
+        }
+      }
     public static void main(String[] args) throws Exception {
 
         DatagramSocket aSocket = null;
