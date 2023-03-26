@@ -40,7 +40,7 @@ public class FlightSystem {
         return null;
     }
 
-    public int QueryNumberOfFlights() {
+    public int QueryQtyOfFlights() {
 
         return this.flights.size();
     }
@@ -50,7 +50,7 @@ public class FlightSystem {
         return this.NumberOfLikes;
     }
 
-    public boolean MakeAnReservation(int flightID, int numberOfSeats) {
+    public boolean QueryReservations(int flightID, int numberOfSeats) {
 
         boolean success = false;
         for (int i = 0; i < this.flights.size(); i++) {
