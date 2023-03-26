@@ -115,7 +115,7 @@ public class Server implements Runnable {
         if (obj[0].equalsIgnoreCase("3")) {
             System.out.println("Service 3; User tries to make an reservation of " + obj[5] + " seats on a flight ID:" + obj[4]);
             this.CheckMonitoringTimes();;
-            Boolean result = this.flightSystem.MakeAnReservation(Integer.parseInt(obj[4]), Integer.parseInt(obj[5]));
+            Boolean result = this.flightSystem.QueryReservations(Integer.parseInt(obj[4]), Integer.parseInt(obj[5]));
             System.out.println("checking "+result);
             if (result == false) {
                 return obj[0] + ",ERROR";
@@ -151,7 +151,7 @@ public class Server implements Runnable {
         }
         if (obj[0].equalsIgnoreCase("5")) {
             System.out.println("Service 5; User asked to query number of flights");
-            int result = this.flightSystem.QueryNumberOfFlights();
+            int result = this.flightSystem.QueryQtyOfFlights();
             System.out.println(result);
             return obj[0] + "," + 1 + ",0," + result;
         }

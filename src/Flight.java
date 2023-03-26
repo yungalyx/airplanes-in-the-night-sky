@@ -92,7 +92,7 @@ public class Flight {
     /**
      * @param destination the destination to set
      */
-    public void setDestination(String destination) {
+    public void setDest(String destination) {
         this.destination = destination;
     }
 

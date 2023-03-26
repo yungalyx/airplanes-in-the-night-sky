@@ -46,7 +46,7 @@ public class Communication_UDP {
         return false;
     }
 
-    public void QueryByID(int id) throws IOException {
+    public void QueryByFlightID(int id) throws IOException {
         byte[] item = this.Send("2,1,0," + id+",");
 
         if (item != null ) {
@@ -63,7 +63,7 @@ public class Communication_UDP {
         }
     }
 
-    public void QueryNumberOfFlights() throws IOException {
+    public void QueryQtyOfFlights() throws IOException {
         byte[] item = this.Send("5,0,");
         if (item != null) {
             String[] item1 = Marshalling.Unpack(item);
@@ -99,7 +99,7 @@ public class Communication_UDP {
 
     }
 
-    public void MakeAReservation(int flightID, int numberOfSeatsToReserve) throws IOException {
+    public void QueryReservation(int flightID, int numberOfSeatsToReserve) throws IOException {
         byte[] item = this.Send("3, 2, 0, 0," + flightID + "," + numberOfSeatsToReserve+",");
         if (item != null) {
             String[] item1 = Marshalling.Unpack(item);
@@ -111,7 +111,7 @@ public class Communication_UDP {
         }
     }
 
-    public void MonitorFlightUpdate(int flightID, int interval) throws IOException {
+    public void QueryFlightUpdate(int flightID, int interval) throws IOException {
         this.CallBack("4, 2, 0, 0,"+ flightID+","+ interval, interval);
     }
 

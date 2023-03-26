@@ -74,21 +74,21 @@ public class Client implements Runnable {
             } else if (user_choice.equals("2")) {
                 System.out.println("Choose your flight ID:");
                 String user_id = scanner.nextLine();
-                communication.QueryByID(Integer.parseInt(user_id));
+                communication.QueryByFlightID(Integer.parseInt(user_id));
             } else if (user_choice.equals("3")) {
                 System.out.println("Input Flight ID:");
                 String flight_id = scanner.nextLine();
                 System.out.println("Number of seats you want to reserve:");
                 String n_of_seats = scanner.nextLine();
-                communication.MakeAReservation(Integer.parseInt(flight_id), Integer.parseInt(n_of_seats));
+                communication.QueryReservation(Integer.parseInt(flight_id), Integer.parseInt(n_of_seats));
             } else if (user_choice.equals("4")) {
                 System.out.println("Input Flight ID:");
                 String flight_id = scanner.nextLine();
                 System.out.println("Input listening interval in seconds:");
                 String seconds = scanner.nextLine();
-                communication.MonitorFlightUpdate(Integer.parseInt(flight_id), Integer.parseInt(seconds));
+                communication.QueryFlightUpdate(Integer.parseInt(flight_id), Integer.parseInt(seconds));
             } else if (user_choice.equals("5")) {
-                communication.QueryNumberOfFlights();
+                communication.QueryQtyOfFlights();
             } else if (user_choice.equals("6")) {
                 communication.GiveLike(number_of_likes_given);
                 number_of_likes_given += 1;
